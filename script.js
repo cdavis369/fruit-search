@@ -5,6 +5,7 @@ const fruit = ['Apple', 'Apricot', 'Avocado 🥑', 'Banana', 'Bilberry', 'Blackb
 
 function search(str) {
 	const re = new RegExp(str, "i");
+	// make new array with all fruits containing substring of search
 	return fruit.reduce((arr, val) => {
 		if (str.length && val.match(re)) 
 			arr.push(val);
@@ -18,14 +19,16 @@ function searchHandler(e) {
 	showSuggestions(suggestions, searchInput);
 }
 
+// create p element for each fruit suggestion and add to suggestions div
 function showSuggestions(results, inputVal) {
+	// clear suggestions div for each keystroke
 	suggestions.innerHTML = "";
 	results.forEach((val) => {
 			const suggest = document.createElement("p");
 			suggest.setAttribute("class", "suggestions");
+			// bold suggested text which matches search input
 			suggest.innerHTML = boldText(val, inputVal);
 			suggest.value = val;
-			const br = document.createElement('br');
 			suggestions.append(suggest);
 	});
 }
@@ -35,6 +38,10 @@ function useSuggestion(e) {
 	suggestions.innerHTML = "";
 }
 
+// find starting index of searchInput in suggestion
+// Iterate over suggestion, create new string for suggestion
+// place <b> in string at found index
+// place </b> when the length of chars in new string is as long as search input
 function boldText(suggestion, searchInput) {
 	const re = new RegExp(searchInput, 'i');
 	const matchIndex = suggestion.search(re);
