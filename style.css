@@ -1,0 +1,44 @@
+
+:focus {
+  outline-color: rgba(251,105,1,1);
+} 
+
+body {
+  background: radial-gradient(circle, rgba(19,138,221,1) 38%, rgba(251,105,1,1) 100%);
+}
+
+.search-container {
+  margin-top: 20rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 15rem;
+  height: 2rem;
+
+}
+
+.search-container input {
+  width: 100%;
+  height: inherit;
+  margin-bottom: 5px;
+  background-color: rgba(255,255,255, 0.3);
+  border: none;
+ }
+
+.search-container .suggestions {
+  margin: 0%;
+  width: 100;
+  height: inherit;
+  text-align: left;
+
+}
+
+p {
+  background-color: rgba(255,255,255, 0.3);
+}
+
+.search-container .suggestions :hover {
+  background-color: rgba(251,105,1,1);
+  color: antiquewhite;
+}
+
+
