@@ -43,29 +43,9 @@ function useSuggestion(e) {
 // place <b> in string at found index
 // place </b> when the length of chars in new string is as long as search input
 function boldText(suggestion, searchInput) {
-	const re = new RegExp(searchInput, 'i');
-	const matchIndex = suggestion.search(re);
-	const suggestionArr = Array.from(suggestion);
-	let bolded = "";
-	if (searchInput.length === 1) {
-		suggestionArr.forEach((letter, index) => {
-			if (index === matchIndex)
-				bolded += `<b>${letter}</b>`;
-			else 
-				bolded += letter;
-		});
-	}
-	else {
-		suggestionArr.forEach((letter, index) => {
-			if (index === matchIndex)
-				bolded += `<b>${letter}`;
-			else if (index - matchIndex === searchInput.length - 1)
-				bolded += `${letter}</b>`;
-			else
-				bolded += letter;
-		});
-	}
-	return bolded;
+	const regEx = new RegExp(searchInput, 'i');
+	const match = suggestion.match(regEx);
+	return suggestion.replace(regEx, `<b>${match}</b>`);
 }
 
 input.addEventListener('keyup', searchHandler);
