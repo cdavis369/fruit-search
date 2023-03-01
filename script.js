@@ -34,7 +34,7 @@ function showSuggestions(results, inputVal) {
 }
 
 function useSuggestion(e) {
-	input.value = e.target.innerText;
+	input.value = e.target.parentElement.innerText;
 	suggestions.innerHTML = "";
 }
 
