@@ -1,0 +1,40 @@
+SOLIDIFYING TERMINOLOGY:
+HTTP: hypertext transfer protocol -> an application layer used to distribute and retrieve information throughout networks.
+
+URL: a human readble address covering the domain name to access a network and files to reach a specific file 
+location within that network. Converted from IP address via DNS.
+
+DNS: Domain Name System used to convert a URL into an IP address in order to connect the browser to the desired network location.
+
+The query string is the part of the URL which assigns values to parameters to pass along to the receiver.
+
+GET is used to retrieve information from the host and POST is used to pass information for use by the host.
+
+An HTTP request is made by the browser to the host to have some kind of interation depending on the request (GET, POST).
+
+An HTTP response is a message sent by the host/server to the client to show the status in which the request was received. 
+It consists of the HTTP version, a status code, and message body.
+
+An HTTP header is information passed in a request/response which doesn't relate to the information body. 
+Typical headers relay information about language, date, hostname, cookies, etc...
+
+Entering the URL results in:
+	URL is passed to the DNS to retrieve the corresponding IP address
+	Request is made
+	Host responds
+	Client loads receieved HTML file
+	Further requests are made depending on resources receieved.
+
+PRACTICE TOOLS:
+curl -H "Accept: text/plain" https://icanhazdadjoke.com/
+A dad washes his car with his son. But after a while, the son says, "why can't you just use a sponge?"
+
+curl -H "Accept: text/plain" https://icanhazdadjoke.com/search?term=pirate
+What did the pirate say on his 80th birthday? Aye Matey!
+What does a pirate pay for his corn? A buccaneer!
+Why couldn't the kid see the pirate movie? Because it was rated arrr!
+Why do pirates not know the alphabet? They always get stuck at "C".
+Why are pirates called pirates? Because they arrr!
+
+dig https://icanhazdadjoke.com/
+172.67.198.173
